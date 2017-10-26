@@ -7,13 +7,15 @@ const findRotationPoint = arr => {
       end = middle;
     } else if (arr[middle] > arr[end]) {
       start = middle;
+    } else {
+      return 0;
     }
     middle = Math.floor((start + end) / 2);
   }
   return end;
 };
 
-var words = [
+const words = [
   'karpatka',
   'othellolagkage',
   'ptolemaic',
@@ -27,7 +29,9 @@ var words = [
   'engender'
 ];
 
-var nums = [6, 7, 1, 2, 3, 4, 5]
+const rotatedNums = [6, 7, 1, 2, 3, 4, 5]
+const orderedNums = [1, 2, 3, 4, 5];
 
 console.assert(findRotationPoint(words) === 7);
-console.assert(findRotationPoint(nums) === 2);
+console.assert(findRotationPoint(rotatedNums) === 2);
+console.assert(findRotationPoint(orderedNums) === 0)
