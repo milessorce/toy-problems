@@ -24,7 +24,7 @@ function LinkedListNode(value) {
 const containsCycle = node => {
   let fastRunner = node;
   let slowRunner = node;
-  while (fastRunner && fastRunner.next) {
+  while (fastRunner && fastRunner.next.next) {
     slowRunner = slowRunner.next;
     fastRunner = fastRunner.next.next;
     if (fastRunner === slowRunner) {
