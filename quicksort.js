@@ -5,13 +5,13 @@ const quicksort = arr => {
   let pivot = arr[Math.floor(arr.length / 2)];
   let right = [];
   let left = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < pivot) {
-      left.push(arr[i]);
-    } else if (arr[i] > pivot) {
-      right.push(arr[i]);
+  arr.forEach(int => {
+    if (int < pivot) {
+      left.push(int);
+    } else if (int > pivot) {
+      right.push(int);
     }
-  }
+  });
   return quicksort(left).concat(pivot).concat(quicksort(right));
 };
 
